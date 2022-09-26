@@ -14,7 +14,7 @@ tasks:
     init: |
       ##
       ## install Ignite CLI
-      curl https://get.ignite.com/cli! | bash
+      curl https://get.ignite.com/cli! | sudo bash
 
     command: |
       ##
