@@ -14,7 +14,7 @@ tasks:
     init: |
       ##
       ## install Ignite CLI
-      make -C /workspace/ignite install
+      curl https://get.ignite.com/cli! | bash
 
     command: |
       ##
