@@ -12,3 +12,4 @@ RUN brew install gh
 
 # NPM
 RUN npm install -g npm@7.10.0
+RUN curl https://get.ignite.com/cli! | bash

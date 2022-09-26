@@ -1,0 +1,34 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: Setup
+
+    command: |
+      ##
+      # configure env vars.      
+      echo "
+      export VITE_CUSTOM_URL=$(gp url)
+      export CHISEL_ADDR=$(gp url 7575)
+      export RPC_ADDRESS=$(gp url 26657):443
+      export API_ADDRESS=$(gp url 1317)
+      " >> ~/.bashrc && source ~/.bashrc
+
+      echo "
+      export VITE_API_COSMOS=${API_ADDRESS}
+      export VITE_API_TENDERMINT=${RPC_ADDRESS}
+      export VITE_WS_TENDERMINT=${RPC_ADDRESS/https/wss}/websocket
+      " >> ~/.bashrc && source ~/.bashrc
+
+      clear
+
+ports:
+  - port: 1317
+  - port: 26657
+    visibility: public
+  - port: 26659
+    visibility: public
+  - port: 8080
+  - port: 7575
+    visibility: public
+  - port: 4500
