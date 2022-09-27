@@ -4,11 +4,6 @@ image:
 tasks:
   - name: Setup
 
-    init: |
-      ##
-      ## install Ignite CLI
-      curl https://get.ignite.com/cli! | sudo bash
-
     command: |
       ##
       # configure env vars.      
@@ -24,6 +19,8 @@ tasks:
       export VITE_API_TENDERMINT=${RPC_ADDRESS}
       export VITE_WS_TENDERMINT=${RPC_ADDRESS/https/wss}/websocket
       " >> ~/.bashrc && source ~/.bashrc
+
+      clear
 
 ports:
   - port: 1317
