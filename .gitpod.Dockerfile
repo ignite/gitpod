@@ -13,4 +13,4 @@ RUN brew install gh
 
 # NPM
 RUN npm install -g npm@7.10.0
-RUN curl https://get.ignite.com/cli! | sudo bash
+RUN curl https://get.ignite.com/cli@v0.0.0-cosmoverse! | sudo bash
